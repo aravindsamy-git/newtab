@@ -30,6 +30,18 @@ body{
   color: #fffff7;
 }
 
+.search-container {
+  transition: max-height 0.3s ease-out, opacity 0.3s ease-out;
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+}
+
+.search-container.active {
+  max-height: 500px; /* Adjust as needed */
+  opacity: 1;
+}
+
 .search i {
   font-size: 15px;
   color: white;
@@ -38,8 +50,8 @@ body{
 .single-line-input {
   position: absolute;
   top: 0%;
-  left: 58%; /* Adjust the left position to give space for the icon */
-  width: 200px; /* Adjust the width to leave space for the icon */
+  left: 59%; /* Adjust the left position to give space for the icon */
+  width: 175px; /* Adjust the width to leave space for the icon */
   outline: none;
   border: none;
   background-color: transparent; /* Set the background color as transparent */
@@ -57,6 +69,7 @@ body{
   color: white;
 }
 
+
 .select-menu .select-btn{
   display: flex;
   height: 55px;
@@ -70,14 +83,19 @@ body{
 
 .select-btn i {
   font-size: 25px;
-  margin-right: 1px; /* Adjusted margin */
+  margin-right: 5px; /* Adjusted margin */
 }
 
-.selected-icon {
-  font-size: 25px; /* Set the font size to match the icon size */
-  margin-right: 1px;
-  color: white; /* Adjusted margin */
+
+.engine-logo {
+  width: 25px; /* Adjust the width as needed */
+  height: 25px; /* Adjust the height as needed */
+  margin-right: 5px;
+  filter: brightness(0) invert(1); /* Change the color of the logo */
+  margin-top: -3px; /* Adjusted margin to move the logo up */
+  margin-left: -18px; /* Adjusted margin to move the logo up */
 }
+
 
 .select-menu .options{
   position: absolute;
@@ -87,9 +105,10 @@ body{
   display: none;
 }
 
-.select-menu.active .options{
+.select-menu.active .options {
   display: block;
 }
+
 .options .option{
   display: flex;
   height: 55px;
@@ -109,4 +128,15 @@ body{
 .option .option-text{
   font-size: 18px;
   color: #333;
+}
+
+.search:hover .search-container {
+  max-height: 500px; /* Adjust as needed */
+  opacity: 1;
+}
+
+/* Show the container and selection when hovering over the select button */
+.select-btn:hover + .select-menu {
+  max-height: 500px; /* Adjust as needed */
+  opacity: 1;
 }
